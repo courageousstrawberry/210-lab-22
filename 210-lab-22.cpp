@@ -123,23 +123,28 @@ public:
             delete temp;
             return;
         }
+        // Loop through the linked list, until correct position is reached.
         while(temp && count != pos){
             temp = temp->next;
             count++;
         }
+        // If temp reaches the end of the list, end the function.
         if (temp == nullptr) {
             return;
         }
 
+        // Rearrange the pointers surrounding the node at the position to delete.
         if(temp->next != nullptr) {
             temp->next->prev = temp->prev;
         }
         if (temp->prev != nullptr) {
             temp->prev->next = temp->next;
         }
-        
-        if 
-
+        // If position is the tail
+        if (temp == tail) {
+            tail = temp->prev;
+        }
+        delete temp;
     }
     void print()
     {
