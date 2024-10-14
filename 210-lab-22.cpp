@@ -118,7 +118,7 @@ public:
             head = head->next;
             // Check if there is a value in head
             if (head) {
-                head->prev = nullptr
+                head->prev = nullptr;
             }
             delete temp;
             return;
@@ -226,6 +226,18 @@ int main()
     list.print();
     cout << "List backward: ";
     list.print_reverse();
+    cout << "Delete head node: " << endl;
+    list.pop_front();
+    list.print();
+    cout << "Delete tail node: " << endl;
+    list.pop_back();
+    list.print();
+    cout << "Delete node as position 3: " << endl;
+    list.delete_pos(3);
+    list.print();
+    cout << "Delete node with value 10: " << endl;
+    list.delete_val(10);
+    list.print();
     cout << "Deleting list, then trying to print.\n";
     list.~DoublyLinkedList();
     cout << "List forward: ";
