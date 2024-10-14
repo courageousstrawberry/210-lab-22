@@ -146,6 +146,23 @@ public:
         }
         delete temp;
     }
+    void pop_front() {
+        if (!head){
+            return;
+        }
+        Node *temp = head;
+        head = head->next;
+        // Check if head still exists and update the prev value.
+        if(head) {
+            head->prev = nullptr;
+        }
+        else {
+            // If head doesn't exist, the list is now empty
+            tail = nullptr;
+        }
+        delete temp;
+        temp = nullptr;
+    }
     void print()
     {
         Node *current = head;
