@@ -80,7 +80,7 @@ public:
             tail = newNode; // Inserting at the end
         temp->next = newNode;
     }
-    void delete_node(int value)
+    void delete_val(int value)
     {
         if (!head)
             return; // Empty list
