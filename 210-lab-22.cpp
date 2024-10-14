@@ -163,6 +163,24 @@ public:
         delete temp;
         temp = nullptr;
     }
+    void pop_back() {
+        if (!head) {
+            return;
+        }
+        // Check if list only has one node
+        if (head == tail) {
+            delete head;
+            head = nullptr;
+            tail = nullptr;
+            return;
+        }
+        // Go to last node
+        Node *temp = tail;
+        tail = tail->prev;
+        tail->next = nullptr;
+        delete temp;
+        temp = nullptr;
+    }
     void print()
     {
         Node *current = head;
