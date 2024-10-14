@@ -107,6 +107,40 @@ public:
         }
         delete temp;
     }
+    // Delete node by position.
+    void delete_pos(int pos) {
+        int count = 0;
+        if (!head){
+            return;
+        }
+        Node *temp = head;
+        if (pos == 0) {
+            head = head->next;
+            // Check if there is a value in head
+            if (head) {
+                head->prev = nullptr
+            }
+            delete temp;
+            return;
+        }
+        while(temp && count != pos){
+            temp = temp->next;
+            count++;
+        }
+        if (temp == nullptr) {
+            return;
+        }
+
+        if(temp->next != nullptr) {
+            temp->next->prev = temp->prev;
+        }
+        if (temp->prev != nullptr) {
+            temp->prev->next = temp->next;
+        }
+        
+        if 
+
+    }
     void print()
     {
         Node *current = head;
